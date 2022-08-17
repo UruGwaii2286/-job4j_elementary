@@ -15,9 +15,10 @@ public class Types {
         double d = 121.19;
         byte fu = (byte) d;
         System.out.println(fu);
+
         short s = 1500;
         char k = (char) s;
         double u = k;
-        System.out.println(g);
+        System.out.println();
     }
 }
