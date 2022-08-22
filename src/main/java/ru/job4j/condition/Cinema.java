@@ -15,4 +15,10 @@ public class Cinema {
         Cinema.access(16);
 
     }
+
+    public static class PointTest {
+
+        public void distance() {
+        }
+    }
 }
