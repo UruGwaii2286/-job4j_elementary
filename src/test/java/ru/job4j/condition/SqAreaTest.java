@@ -15,19 +15,21 @@ public class SqAreaTest {
         double out = SqArea.square(p, k);
         Assert.assertEquals(expected, out, 0.01);
     }
+
     @Test
-    public void whenP4K3Square2() {
-        int expected = 5;
+    public void whenP4K3Square5() {
+        int expected = 1;
         int p = 4;
-        double k = 3;
+        double k = 1;
         double out = SqArea.square(p, k);
         Assert.assertEquals(expected, out, 0.01);
     }
+
     @Test
-    public void whenP7K1Square2() {
+    public void whenP7K1Square4() {
         int expected = 4;
-        int p = 7;
-        double k = 1;
+        int p = 8;
+        double k = 2;
         double out = SqArea.square(p, k);
         Assert.assertEquals(expected, out, 0.01);
     }
