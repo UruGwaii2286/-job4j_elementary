@@ -36,7 +36,7 @@ public class MaxTest {
         int left = 40;
         int right = 40;
         int result = Max.max(left, right);
-        int expected = 20;
+        int expected = 40;
         assertThat(result).isEqualTo(expected);
 
     }
