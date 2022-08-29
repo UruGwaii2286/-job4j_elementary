@@ -32,7 +32,7 @@ public class MaxTest {
     }
 
     @Test
-    public void whenMax40To40Then20() {
+    public void whenMax40To40Then40() {
         int left = 40;
         int right = 40;
         int result = Max.max(left, right);
