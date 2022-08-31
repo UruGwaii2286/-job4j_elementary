@@ -4,6 +4,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
+import java.sql.SQLOutput;
+
 public class TriangleTest {
 
     @Test
