@@ -1,31 +1,31 @@
 package ru.job4j.array;
 
-import org.junit.jupiter.api.Test;
-import static org.assertj.core.api.Assertions.assertThat;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class MatrixCheckTest {
     @Test
     public void whenHasMonoHorizontal() {
-        char[][] input = {
+        char[][]input = {
                 {' ', ' ', ' '},
                 {'X', 'X', 'X'},
                 {' ', ' ', ' '},
         };
         int row = 1;
         boolean result = MatrixCheck.monoHorizontal(input, row);
-        assertThat(result).isTrue();
+        Assert.assertTrue(result);
     }
 
     @Test
     public void whenHasNotMonoHorizontal() {
-        char[][] input = {
+        char[][]input = {
+                {' ', ' ', ' '},
                 {' ', ' ', ' '},
                 {'X', 'X', ' '},
-                {' ', ' ', ' '},
         };
-        int row = 1;
+        int row = 2;
         boolean result = MatrixCheck.monoHorizontal(input, row);
-        assertThat(result).isTrue();
+        Assert.assertFalse(result);
     }
 
     @Test
@@ -37,7 +37,7 @@ public class MatrixCheckTest {
         };
         int column = 2;
         boolean result = MatrixCheck.monoVertical(input, column);
-        assertThat(result).isTrue();
+        Assert.assertTrue(result);
     }
 
     @Test
@@ -49,9 +49,9 @@ public class MatrixCheckTest {
         };
         int column = 0;
         boolean result = MatrixCheck.monoVertical(input, column);
-        assertThat(result).isTrue();
+        Assert.assertFalse(result);
     }
-
+    
     @Test
     public void whenDiagonalFullX() {
         char[][] input = {
@@ -61,7 +61,7 @@ public class MatrixCheckTest {
         };
         char[] result = MatrixCheck.extractDiagonal(input);
         char[] expected = {'X', 'X', 'X'};
-        assertThat(result).containsExactly(expected);
+        Assert.assertArrayEquals(expected, result);
     }
 
     @Test
@@ -73,7 +73,7 @@ public class MatrixCheckTest {
         };
         char[] result = MatrixCheck.extractDiagonal(input);
         char[] expected = {'1', '1', '1'};
-        assertThat(result).containsExactly(expected);
+        Assert.assertArrayEquals(expected, result);
     }
 
     @Test
@@ -85,20 +85,20 @@ public class MatrixCheckTest {
         };
         char[] result = MatrixCheck.extractDiagonal(input);
         char[] expected = {'X', 'Y', 'Z'};
-        assertThat(result).containsExactly(expected);
+        Assert.assertArrayEquals(expected, result);
     }
 
     @Test
     public void whenDataMonoByTrueThenTrue() {
         char[][] input = {
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
                 {'X', 'X', 'X', 'X', 'X'},
-                {' ', ' ', 'X', ' ', ' '},
-                {' ', ' ', 'X', ' ', ' '},
                 {' ', ' ', 'X', ' ', ' '},
                 {' ', ' ', 'X', ' ', ' '},
         };
         boolean result = MatrixCheck.isWin(input);
-        assertThat(result).isTrue();
+        Assert.assertTrue(result);
     }
 
     @Test
@@ -111,19 +111,45 @@ public class MatrixCheckTest {
                 {' ', ' ', 'X', ' ', ' '},
         };
         boolean result = MatrixCheck.isWin(input);
-        assertThat(result).isFalse();
+        Assert.assertFalse(result);
+    }
+
+    @Test
+    public void whenDataHMonoByTrueThenTrue2() {
+        char[][] input = {
+                {'X', 'X', 'X', 'X', 'X'},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+        };
+        boolean result = MatrixCheck.isWin(input);
+        Assert.assertTrue(result);
     }
 
     @Test
     public void whenDataHMonoByTrueThenTrue() {
         char[][] input = {
-                {' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
                 {'X', 'X', 'X', 'X', 'X'},
                 {' ', ' ', 'X', ' ', ' '},
                 {' ', ' ', 'X', ' ', ' '},
         };
         boolean result = MatrixCheck.isWin(input);
-        assertThat(result).isTrue();
+        Assert.assertTrue(result);
+    }
+
+    @Test
+    public void whenDataHMonoByTrueThenTrue3() {
+        char[][] input = {
+                {' ', ' ', ' ', ' ', 'X'},
+                {' ', ' ', ' ', ' ', 'X'},
+                {' ', ' ', ' ', ' ', 'X'},
+                {' ', ' ', ' ', ' ', 'X'},
+                {'X', 'X', 'X', 'X', 'X'},
+        };
+        boolean result = MatrixCheck.isWin(input);
+        Assert.assertTrue(result);
     }
 }
