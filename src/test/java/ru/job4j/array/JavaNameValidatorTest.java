@@ -33,12 +33,12 @@ class JavaNameValidatorTest {
 
     @Test
     void whenNumberInValid() {
-        assertThat(isNameValid("123")).isTrue();
+        assertThat(isNameValid("123")).isFalse();
     }
 
     @Test
     void whenFirstLatinUpperCaseIsInvalid() {
-        assertThat(isNameValid("First")).isTrue();
+        assertThat(isNameValid("First")).isFalse();
     }
 
     @Test
